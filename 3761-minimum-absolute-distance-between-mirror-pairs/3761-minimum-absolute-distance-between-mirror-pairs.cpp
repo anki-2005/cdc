@@ -13,13 +13,13 @@ public:
         
         int n = nums.size();
         
-        int res=n;
+        int res=INT_MAX;
         for(int i=0;i<n;i++){
             if(mpp.count(nums[i])){
                 res=min(res,i-mpp[nums[i]]);
             }
             mpp[rever(nums[i])]=i;
         }
-        return (res < n) ? res :-1;
+        return (res < INT_MAX) ? res :-1;
     }
 };
