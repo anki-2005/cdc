@@ -4,7 +4,7 @@ public:
         vector<vector<pair<int,int>>>adj(n+1);
         vector<int>time(n+1,1e9);
         typedef pair<int,int> node;
-        priority_queue<node,vector<node>,greater<node>>minheap;
+        priority_queue<pair<int,int>>minheap;
         int m=times.size();
         for(int i=0;i<m;i++){
             adj[times[i][0]].push_back({times[i][1],times[i][2]});
