@@ -1,19 +1,20 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        queue <int>pos;
-        queue <int>neg;
-        vector<int>ans;
-        for(auto it:nums){
-            if(it > 0)pos.push(it);
-            else neg.push(it);
-        }
-        while(!pos.empty()){
-            ans.push_back(pos.front());
-            ans.push_back(neg.front());
-            pos.pop();
-            neg.pop();
-        }
-        return ans;
+       int pos =0 ;
+       int neg = 1;
+       int n = nums.size();
+       vector<int>ans(n);
+       for(auto it:nums){
+          if(it >0){
+            ans[pos] = it;
+            pos+=2;
+          }
+          else {
+            ans[neg]=it;
+            neg+=2;
+          }
+       }
+       return ans;
     }
 };
